@@ -1,8 +1,4 @@
 var choices = [ "rock", "paper", "scissors", "lizard", "spock"];
-var i = Math.floor(Math.random()* 5);
-var e = Math.floor(Math.random()* 5);
-var computerchoice = choices[i];
-var computerchoice2 = choices[e];
 var userpoints = 0;
 var computerpoints = 0;
 var computerpoints2 = 0;
@@ -26,75 +22,79 @@ function convert(word){
     return '<i class="far fa-hand-spock"></i>'
 }
 function game(UserChoice){
+    var i = Math.floor(Math.random()* 5);
+    var e = Math.floor(Math.random()* 5);
+    var computerchoice = choices[i];
+    var computerchoice2 = choices[e];
     var box = document.getElementById("challenge");
     box.style.display = "inline-flex";
-    var userDiv = document.getElementById("YourObject");
-    userDiv.innerHTML = convert(UserChoice);
-    var comDiv = document.getElementById("ComObject");
-    comDiv.innerHTML = convert(ComChoice);
-    var comDiv2 = document.getElementById("ComObject2");
-    comDiv2.innerHTML = convert(ComChoice2);
-    if (UserChoice === "rock" && ComChoice === "paper" && ComChoice2 === "paper" || UserChoice === "rock" && ComChoice === "paper" && ComChoice2 === "lizard" || UserChoice === "rock" && ComChoice === "lizard" && ComChoice2 === "paper" || UserChoice === "rock" && ComChoice === "lizard" && ComChoice2 === "lizard") {
+    var UserDiv = document.getElementById("YourObject");
+    UserDiv.innerHTML = convert(UserChoice);
+    var ComDiv = document.getElementById("ComObject");
+    ComDiv.innerHTML = convert(computerchoice);
+    var ComDiv2 = document.getElementById("ComObject2");
+    ComDiv2.innerHTML = convert(computerchoice2);
+    if(UserChoice === "rock" && computerchoice === "scissors" && computerchoice2 === "scissors" || UserChoice === "rock" && computerchoice === "lizard" && computerchoice2 === "lizard" || UserChoice === "rock" && computerchoice === "scissors" && computerchoice2 === "lizard" || UserChoice === "rock" && computerchoice === "lizard" && computerchoice2 === "scissors"){
         win();
     }
-    if (UserChoice === "paper" && ComChoice === "spock" && ComChoice2 === "spock" || UserChoice === "paper" && ComChoice === "Spock" && ComChoice2 === "rock" || UserChoice === "paper" && ComChoice === "rock" && ComChoice2 === "spock" || UserChoice === "paper" && ComChoice === "rock" && ComChoice2 === "rock") {
+    if(UserChoice === "paper" && computerchoice === "rock" && computerchoice2 === "rock" || UserChoice === "paper" && computerchoice === "spock" && computerchoice2 === "spock" || UserChoice === "paper" && computerchoice === "rock" && computerchoice2 === "spock" || UserChoice === "paper" && computerchoice === "spock" && computerchoice2 === "rock"){
         win();
     }
-    if (UserChoice === "scissors" && ComChoice === "paper" && ComChoice2 === "paper" || UserChoice === "scissors" && ComChoice === "paper" && ComChoice2 === "lizard" || UserChoice === "scissors" && ComChoice === "lizard" && ComChoice2 === "paper" || UserChoice === "scissors" && ComChoice === "lizard" && ComChoice2 === "lizard") {
+    if(UserChoice === "scissors" && computerchoice === "paper" && computerchoice2 === "paper" || UserChoice === "scissors" && computerchoice === "lizard" && computerchoice2 === "lizard" || UserChoice === "scissors" && computerchoice === "paper" && computerchoice2 === "lizard" || UserChoice === "scissors" && computerchoice === "lizard" && computerchoice2 === "paper"){
         win();
     }
-    if (UserChoice === "lizard" && ComChoice === "paper" && ComChoice2 === "paper" || UserChoice === "lizard" && ComChoice === "paper" && ComChoice2 === "spock" || UserChoice === "lizard" && ComChoice === "spock" && ComChoice2 === "paper" || UserChoice === "lizard" && ComChoice === "spock" && ComChoice2 === "spock") {
+    if(UserChoice === "lizard" && computerchoice === "spock" && computerchoice2 === "spock" || UserChoice === "lizard" && computerchoice === "paper" && computerchoice2 === "paper" || UserChoice === "lizard" && computerchoice === "spock" && computerchoice2 === "paper" || UserChoice === "lizard" && computerchoice === "paper" && computerchoice2 === "spock"){
         win();
     }
-    if (UserChoice === "spock" && ComChoice === "scissors" && ComChoice2 === "scissors" || UserChoice === "spock" && ComChoice === "scissors" && ComChoice2 === "rock" || UserChoice === "spock" && ComChoice === "rock" && ComChoice2 === "scissors" || UserChoice === "spock" && ComChoice === "rock" && ComChoice2 === "rock") {
+    if(UserChoice === "spock" && computerchoice === "scissors" && computerchoice2 === "scissors" || UserChoice === "spock" && computerchoice === "rock" && computerchoice2 === "rock" || UserChoice === "spock" && computerchoice === "scissors" && computerchoice2 === "rock" || UserChoice === "spock" && computerchoice === "rock" && computerchoice2 === "scissors"){
         win();
     }
-    if (UserChoice === ComChoice2) {
+    if(computerchoice === "rock" && UserChoice === "scissors" && computerchoice2 === "scissors" || computerchoice === "rock" && UserChoice === "lizard" && computerchoice2 === "lizard" || computerchoice === "rock" && UserChoice === "scissors" && computerchoice2 === "lizard" || computerchoice === "rock" && UserChoice === "lizard" && computerchoice2 === "scissors"){
+        win1();
+    }
+    if(computerchoice === "paper" && UserChoice === "rock" && computerchoice2 === "rock" || computerchoice === "paper" && UserChoice === "spock" && computerchoice2 === "spock" || computerchoice === "paper" && UserChoice === "rock" && computerchoice2 === "spock" || computerchoice === "paper" && UserChoice === "spock" && computerchoice2 === "rock"){
+        win1();
+    }
+    if(computerchoice === "scissors" && UserChoice === "paper" && computerchoice2 === "paper" || computerchoice === "scissors" && UserChoice === "lizard" && computerchoice2 === "lizard" || computerchoice === "scissors" && UserChoice === "paper" && computerchoice2 === "lizard" || computerchoice === "scissors" && UserChoice === "lizard" && computerchoice2 === "paper"){
+        win1();
+    }
+    if(computerchoice === "lizard" && UserChoice === "spock" && computerchoice2 === "spock" || computerchoice === "lizard" && UserChoice === "paper" && computerchoice2 === "paper" || computerchoice === "lizard" && UserChoice === "spock" && computerchoice2 === "paper" || computerchoice === "lizard" && UserChoice === "paper" && computerchoice2 === "spock"){
+        win1();
+    }
+    if(computerchoice === "spock" && UserChoice === "scissors" && computerchoice2 === "scissors" || computerchoice === "spock" && UserChoice === "rock" && computerchoice2 === "rock" || computerchoice === "spock" && UserChoice === "scissors" && computerchoice2 === "rock" || computerchoice === "spock" && UserChoice === "rock" && computerchoice2 === "scissors"){
+        win1();
+    }
+    if(computerchoice2 === "rock" && UserChoice === "scissors" && computerchoice === "scissors" || computerchoice2 === "rock" && UserChoice === "lizard" && computerchoice === "lizard" || computerchoice2 === "rock" && UserChoice === "scissors" && computerchoice === "lizard" || computerchoice2 === "rock" && UserChoice === "lizard" && computerchoice === "scissors"){
+        win2();
+    }
+    if(computerchoice2 === "paper" && UserChoice === "rock" && computerchoice === "rock" || computerchoice2 === "paper" && UserChoice === "spock" && computerchoice === "spock" || computerchoice2 === "paper" && UserChoice === "rock" && computerchoice === "spock" || computerchoice2 === "paper" && UserChoice === "spock" && computerchoice === "rock"){
+        win2();
+    }
+    if(computerchoice2 === "scissors" && UserChoice === "paper" && computerchoice === "paper" || computerchoice2 === "scissors" && UserChoice === "lizard" && computerchoice === "lizard" || computerchoice2 === "scissors" && UserChoice === "paper" && computerchoice === "lizard" || computerchoice2 === "scissors" && UserChoice === "lizard" && computerchoice === "paper"){
+        win2();
+    }
+    if(computerchoice2 === "lizard" && UserChoice === "spock" && computerchoice === "spock" || computerchoice2 === "lizard" && UserChoice === "paper" && computerchoice === "paper" || computerchoice2 === "lizard" && UserChoice === "spock" && computerchoice === "paper" || computerchoice2 === "lizard" && UserChoice === "paper" && computerchoice === "spock"){
+        win2();
+    }
+    if(computerchoice2 === "spock" && UserChoice === "scissors" && computerchoice === "scissors" || computerchoice2 === "spock" && UserChoice === "rock" && computerchoice === "rock" || computerchoice2 === "spock" && UserChoice === "scissors" && computerchoice === "rock" || computerchoice2 === "spock" && UserChoice === "rock" && computerchoice === "scissors"){
+        win2();
+    }
+    else{
         draw();
-    }
-    if (UserChoice === ComChoice) {
-        draw();
-    }
-    if (ComChoice === "rock" && ComChoice === "paper" && ComChoice2 === "paper" || UserChoice === "rock" && ComChoice === "paper" && ComChoice2 === "lizard" || UserChoice === "rock" && ComChoice === "lizard" && ComChoice2 === "paper" || UserChoice === "rock" && ComChoice === "lizard" && ComChoice2 === "lizard") {
-        Comwin();
-    }
-    if (ComChoice === "paper" && ComChoice === "spock" && ComChoice2 === "spock" || UserChoice === "paper" && ComChoice === "Spock" && ComChoice2 === "rock" || UserChoice === "paper" && ComChoice === "rock" && ComChoice2 === "spock" || UserChoice === "paper" && ComChoice === "rock" && ComChoice2 === "rock") {
-        Comwin();
-    }
-    if (ComChoice === "scissors" && ComChoice === "paper" && ComChoice2 === "paper" || UserChoice === "scissors" && ComChoice === "paper" && ComChoice2 === "lizard" || UserChoice === "scissors" && ComChoice === "lizard" && ComChoice2 === "paper" || UserChoice === "scissors" && ComChoice === "lizard" && ComChoice2 === "lizard") {
-        Comwin();
-    }
-    if (ComChoice === "lizard" && ComChoice === "paper" && ComChoice2 === "paper" || UserChoice === "lizard" && ComChoice === "paper" && ComChoice2 === "spock" || UserChoice === "lizard" && ComChoice === "spock" && ComChoice2 === "paper" || UserChoice === "lizard" && ComChoice === "spock" && ComChoice2 === "spock") {
-        Comwin();
-    }
-    if (ComChoice === "spock" && ComChoice === "scissors" && ComChoice2 === "scissors" || UserChoice === "spock" && ComChoice === "scissors" && ComChoice2 === "rock" || UserChoice === "spock" && ComChoice === "rock" && ComChoice2 === "scissors" || UserChoice === "spock" && ComChoice === "rock" && ComChoice2 === "rock") {
-        Comwin();
-    }
-    if (ComChoice2 === "rock" && ComChoice === "paper" && ComChoice2 === "paper" || UserChoice === "rock" && ComChoice === "paper" && ComChoice2 === "lizard" || UserChoice === "rock" && ComChoice === "lizard" && ComChoice2 === "paper" || UserChoice === "rock" && ComChoice === "lizard" && ComChoice2 === "lizard") {
-        Com2win();
-    }
-    if (ComChoice2 === "paper" && ComChoice === "spock" && ComChoice2 === "spock" || UserChoice === "paper" && ComChoice === "Spock" && ComChoice2 === "rock" || UserChoice === "paper" && ComChoice === "rock" && ComChoice2 === "spock" || UserChoice === "paper" && ComChoice === "rock" && ComChoice2 === "rock") {
-        Com2win();
-    }
-    if (ComChoice2 === "scissors" && ComChoice === "paper" && ComChoice2 === "paper" || UserChoice === "scissors" && ComChoice === "paper" && ComChoice2 === "lizard" || UserChoice === "scissors" && ComChoice === "lizard" && ComChoice2 === "paper" || UserChoice === "scissors" && ComChoice === "lizard" && ComChoice2 === "lizard") {
-        Com2win();
-    }
-    if (ComChoice2 === "lizard" && ComChoice === "paper" && ComChoice2 === "paper" || UserChoice === "lizard" && ComChoice === "paper" && ComChoice2 === "spock" || UserChoice === "lizard" && ComChoice === "spock" && ComChoice2 === "paper" || UserChoice === "lizard" && ComChoice === "spock" && ComChoice2 === "spock") {
-        Com2win();
-    }
-    if (ComChoice2 === "spock" && ComChoice === "scissors" && ComChoice2 === "scissors" || UserChoice === "spock" && ComChoice === "scissors" && ComChoice2 === "rock" || UserChoice === "spock" && ComChoice === "rock" && ComChoice2 === "scissors" || UserChoice === "spock" && ComChoice === "rock" && ComChoice2 === "rock") {
-        Com2win();
     }
 }
-function win {
-    userpoints++;
+function win(){
     alert("You Win!");
+    userpoints++;
 }
-function Comwin {
+function win1(){
+    alert("AI1 Wins!");
     computerpoints++;
-    alert("Computer 1 Wins!");
 }
-function Com2win {
+function win2(){
+    alert("AI2 Wins!");
     computerpoints2++;
-    alert("Computer 2 Wins!");
+}
+function draw(){
+    alert("Draw");
 }

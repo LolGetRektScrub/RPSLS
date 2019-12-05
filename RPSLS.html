@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+        <title>Rock Paper Scissors Lizard Spock</title>
+        <script src="https://kit.fontawesome.com/423610f8dd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="RPSLS.css">
+</head> 
+<body>
+    <header>
+        <h1>Rock Paper Scissors Lizard Spock</h1>
+    </header>
+    <div class="container">
+        <div class="score-container">
+            <span class="user">You</span>
+            <span id="score"></span>
+            <span class="com">Com</span>
+            <span id="score2"></span>
+            <span class="com2">Com 2</span>
+            <span id="score3"></span>
+        </div>
+        <div class="buttons">
+            <button class="bn" onclick="game(this.value)" value="rock"><i class="far fa-hand-rock"></i></button>
+            <button class="bn" onclick="game(this.value)" value="paper"><i class="far fa-hand-paper"></i></button>
+            <button class="bn" onclick="game(this.value)" value="scissors"><i class="far fa-hand-scissors"></i></button>
+            <button class="bn" onclick="game(this.value)" value="lizard"><i class="far fa-hand-lizard"></i></button>
+            <button class="bn" onclick="game(this.value)" value="spock"><i class="far fa-hand-spock"></i></button>
+        </div>
+        <div id="challenge">
+            <div id="you">
+                <div id="YourObject"></div>
+            </div>
+            <div id="result"></div>
+            <div id="com">
+                <div id="ComObject"></div>
+            </div>
+            <div id="com2">
+                <div id="ComObject2"></div>
+            </div>
+            <script type="text/javascript" src="RPSLS.js"></script>
+        </div>
+    </div>
+</body>
+</html>

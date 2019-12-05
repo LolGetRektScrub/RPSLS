@@ -116,7 +116,7 @@ header h1 {
     border-color: yellow;
     color: yellow;
 }
-.challenge {
+#challenge {
     position: absolute;
     top: 43%;
     left: 50%;
