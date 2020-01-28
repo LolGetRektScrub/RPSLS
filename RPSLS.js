@@ -106,11 +106,14 @@ function win(){
 function win1(){
     alert("AI1 Wins!");
     computerpoints++;
+    return
 }
 function win2(){
     alert("AI2 Wins!");
     computerpoints2++;
+    return
 }
 function draw(){
     alert("Draw");
+    return
 }
