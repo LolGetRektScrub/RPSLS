@@ -36,51 +36,67 @@ function game(UserChoice){
     ComDiv2.innerHTML = convert(computerchoice2);
     if(UserChoice === "rock" && computerchoice === "scissors" && computerchoice2 === "scissors" || UserChoice === "rock" && computerchoice === "lizard" && computerchoice2 === "lizard" || UserChoice === "rock" && computerchoice === "scissors" && computerchoice2 === "lizard" || UserChoice === "rock" && computerchoice === "lizard" && computerchoice2 === "scissors"){
         win();
+        return
     }
     if(UserChoice === "paper" && computerchoice === "rock" && computerchoice2 === "rock" || UserChoice === "paper" && computerchoice === "spock" && computerchoice2 === "spock" || UserChoice === "paper" && computerchoice === "rock" && computerchoice2 === "spock" || UserChoice === "paper" && computerchoice === "spock" && computerchoice2 === "rock"){
         win();
+        return
     }
     if(UserChoice === "scissors" && computerchoice === "paper" && computerchoice2 === "paper" || UserChoice === "scissors" && computerchoice === "lizard" && computerchoice2 === "lizard" || UserChoice === "scissors" && computerchoice === "paper" && computerchoice2 === "lizard" || UserChoice === "scissors" && computerchoice === "lizard" && computerchoice2 === "paper"){
         win();
+        return
     }
     if(UserChoice === "lizard" && computerchoice === "spock" && computerchoice2 === "spock" || UserChoice === "lizard" && computerchoice === "paper" && computerchoice2 === "paper" || UserChoice === "lizard" && computerchoice === "spock" && computerchoice2 === "paper" || UserChoice === "lizard" && computerchoice === "paper" && computerchoice2 === "spock"){
         win();
+        return
     }
     if(UserChoice === "spock" && computerchoice === "scissors" && computerchoice2 === "scissors" || UserChoice === "spock" && computerchoice === "rock" && computerchoice2 === "rock" || UserChoice === "spock" && computerchoice === "scissors" && computerchoice2 === "rock" || UserChoice === "spock" && computerchoice === "rock" && computerchoice2 === "scissors"){
         win();
+        return
     }
     if(computerchoice === "rock" && UserChoice === "scissors" && computerchoice2 === "scissors" || computerchoice === "rock" && UserChoice === "lizard" && computerchoice2 === "lizard" || computerchoice === "rock" && UserChoice === "scissors" && computerchoice2 === "lizard" || computerchoice === "rock" && UserChoice === "lizard" && computerchoice2 === "scissors"){
         win1();
+        return
     }
     if(computerchoice === "paper" && UserChoice === "rock" && computerchoice2 === "rock" || computerchoice === "paper" && UserChoice === "spock" && computerchoice2 === "spock" || computerchoice === "paper" && UserChoice === "rock" && computerchoice2 === "spock" || computerchoice === "paper" && UserChoice === "spock" && computerchoice2 === "rock"){
         win1();
+        return
     }
     if(computerchoice === "scissors" && UserChoice === "paper" && computerchoice2 === "paper" || computerchoice === "scissors" && UserChoice === "lizard" && computerchoice2 === "lizard" || computerchoice === "scissors" && UserChoice === "paper" && computerchoice2 === "lizard" || computerchoice === "scissors" && UserChoice === "lizard" && computerchoice2 === "paper"){
         win1();
+        return
     }
     if(computerchoice === "lizard" && UserChoice === "spock" && computerchoice2 === "spock" || computerchoice === "lizard" && UserChoice === "paper" && computerchoice2 === "paper" || computerchoice === "lizard" && UserChoice === "spock" && computerchoice2 === "paper" || computerchoice === "lizard" && UserChoice === "paper" && computerchoice2 === "spock"){
         win1();
+        return
     }
     if(computerchoice === "spock" && UserChoice === "scissors" && computerchoice2 === "scissors" || computerchoice === "spock" && UserChoice === "rock" && computerchoice2 === "rock" || computerchoice === "spock" && UserChoice === "scissors" && computerchoice2 === "rock" || computerchoice === "spock" && UserChoice === "rock" && computerchoice2 === "scissors"){
         win1();
+        return
     }
     if(computerchoice2 === "rock" && UserChoice === "scissors" && computerchoice === "scissors" || computerchoice2 === "rock" && UserChoice === "lizard" && computerchoice === "lizard" || computerchoice2 === "rock" && UserChoice === "scissors" && computerchoice === "lizard" || computerchoice2 === "rock" && UserChoice === "lizard" && computerchoice === "scissors"){
         win2();
+        return
     }
     if(computerchoice2 === "paper" && UserChoice === "rock" && computerchoice === "rock" || computerchoice2 === "paper" && UserChoice === "spock" && computerchoice === "spock" || computerchoice2 === "paper" && UserChoice === "rock" && computerchoice === "spock" || computerchoice2 === "paper" && UserChoice === "spock" && computerchoice === "rock"){
         win2();
+        return
     }
     if(computerchoice2 === "scissors" && UserChoice === "paper" && computerchoice === "paper" || computerchoice2 === "scissors" && UserChoice === "lizard" && computerchoice === "lizard" || computerchoice2 === "scissors" && UserChoice === "paper" && computerchoice === "lizard" || computerchoice2 === "scissors" && UserChoice === "lizard" && computerchoice === "paper"){
         win2();
+        return
     }
     if(computerchoice2 === "lizard" && UserChoice === "spock" && computerchoice === "spock" || computerchoice2 === "lizard" && UserChoice === "paper" && computerchoice === "paper" || computerchoice2 === "lizard" && UserChoice === "spock" && computerchoice === "paper" || computerchoice2 === "lizard" && UserChoice === "paper" && computerchoice === "spock"){
         win2();
+        return
     }
     if(computerchoice2 === "spock" && UserChoice === "scissors" && computerchoice === "scissors" || computerchoice2 === "spock" && UserChoice === "rock" && computerchoice === "rock" || computerchoice2 === "spock" && UserChoice === "scissors" && computerchoice === "rock" || computerchoice2 === "spock" && UserChoice === "rock" && computerchoice === "scissors"){
         win2();
+        return
     }
     else{
         draw();
+        return
     }
 }
 function win(){
